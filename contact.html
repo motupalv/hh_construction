@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Business Oriented - Contact Page</title>
+    <title>HH</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
     <link href="css/templatemo-business-oriented.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <!--
 
@@ -18,8 +19,17 @@ TemplateMo 549 Business Oriented
 https://templatemo.com/tm-549-business-oriented
 
 -->
+<script type="text/javascript">
+        function updateValue() {
+            var link = document.getElementById("whatsapp");
+            var messageValue = document.getElementById("message").value;
+
+            link.setAttribute("href",
+                "https://api.whatsapp.com/send?phone=919940154869&text="+messageValue);
+        }
+    </script>
 <body>
-    <div id="parallax-1" class="parallax-window" data-parallax="scroll" data-image-src="mainDisplay.png">
+    <div id="parallax-1" class="parallax-window" data-parallax="scroll" data-image-src="img/biz-oriented-header.png">
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -69,7 +79,7 @@ https://templatemo.com/tm-549-business-oriented
                 <section class="tm-contact-form-box mx-auto mb-7">
                     <h3 class="tm-title-gray mb-4 text-center">Contact Information</h3>
                     <hr class="mb-8 tm-hr tm-hr-s mx-auto">
-                    <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                    <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwmKMz9pZnXWsW2JABRnhq0g6tW7_M5ORleRFZJT15lmllyIT1N0NJv/exec" method="POST" class="tm-contact-form">
                         <div class="form-group">
                             <input type="text" name="name" class="form-control rounded-0" placeholder="Name" required />
                         </div>
@@ -90,15 +100,16 @@ https://templatemo.com/tm-549-business-oriented
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Message" required=></textarea>
+                            <textarea rows="8" id="message" name="message" class="form-control rounded-0" placeholder="Message" onchange="updateValue()" required=></textarea>
                         </div>
 
-                        <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-primary rounded-0 d-block mx-auto">Mail</button>
-                          </div>
-                          <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-primary rounded-0 d-block mx-auto">whatsapp</button>
-                    </div>
+                        <div class="form-group" style="text-align:center">
+                            <i class="fa fa-envelope" style="font-size:48px;color:green"></i>
+                        </div>
+                        <div class="form-group" style="text-align:center" onclick>
+
+                            <a id="whatsapp" href="https://api.whatsapp.com/send?phone=919940154869&amp;text=I%20am%20interested%20in%20RC%20and%20need%20information." target="_blank" style="padding-top:0px;">  <i class="fa fa-whatsapp" style="font-size:48px;color:green"></i></a>
+                        </div>
                     </form>
                 </section>
                 <section class="tm-address-box mx-auto">
